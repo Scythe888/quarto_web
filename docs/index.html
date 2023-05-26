@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>labv7</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">labv7</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#конспект-презентации-дмитрия-склярова-на-тему-reverse-engineering" id="toc-конспект-презентации-дмитрия-склярова-на-тему-reverse-engineering" class="nav-link active" data-scroll-target="#конспект-презентации-дмитрия-склярова-на-тему-reverse-engineering">Конспект презентации Дмитрия Склярова на тему Reverse Engineering:</a>
+  <ul class="collapse">
+  <li><a href="#введение" id="toc-введение" class="nav-link" data-scroll-target="#введение">Введение</a>
+  <ul class="collapse">
+  <li><a href="#определение-reverse-engineering-обратная-разработка" id="toc-определение-reverse-engineering-обратная-разработка" class="nav-link" data-scroll-target="#определение-reverse-engineering-обратная-разработка">Определение Reverse Engineering (обратная разработка)</a></li>
+  <li><a href="#значение-reverse-engineering-в-современном-мире" id="toc-значение-reverse-engineering-в-современном-мире" class="nav-link" data-scroll-target="#значение-reverse-engineering-в-современном-мире">Значение Reverse Engineering в современном мире</a></li>
+  </ul></li>
+  <li><a href="#цели-и-применение-reverse-engineering" id="toc-цели-и-применение-reverse-engineering" class="nav-link" data-scroll-target="#цели-и-применение-reverse-engineering">Цели и применение Reverse Engineering</a></li>
+  <li><a href="#основные-методы-reverse-engineering" id="toc-основные-методы-reverse-engineering" class="nav-link" data-scroll-target="#основные-методы-reverse-engineering">Основные методы Reverse Engineering</a>
+  <ul class="collapse">
+  <li><a href="#дизассемблирование" id="toc-дизассемблирование" class="nav-link" data-scroll-target="#дизассемблирование">Дизассемблирование</a></li>
+  <li><a href="#декомпиляция" id="toc-декомпиляция" class="nav-link" data-scroll-target="#декомпиляция">Декомпиляция:</a></li>
+  <li><a href="#отладка" id="toc-отладка" class="nav-link" data-scroll-target="#отладка">Отладка</a></li>
+  </ul></li>
+  <li><a href="#инструменты-reverse-engineering" id="toc-инструменты-reverse-engineering" class="nav-link" data-scroll-target="#инструменты-reverse-engineering">Инструменты Reverse Engineering</a></li>
+  <li><a href="#практические-примеры-reverse-engineering" id="toc-практические-примеры-reverse-engineering" class="nav-link" data-scroll-target="#практические-примеры-reverse-engineering">Практические примеры Reverse Engineering</a></li>
+  <li><a href="#правовые-аспекты-reverse-engineering" id="toc-правовые-аспекты-reverse-engineering" class="nav-link" data-scroll-target="#правовые-аспекты-reverse-engineering">Правовые аспекты Reverse Engineering</a>
+  <ul class="collapse">
+  <li><a href="#законодательство-о-reverse-engineering-в-разных-странах" id="toc-законодательство-о-reverse-engineering-в-разных-странах" class="nav-link" data-scroll-target="#законодательство-о-reverse-engineering-в-разных-странах">Законодательство о Reverse Engineering в разных странах</a></li>
+  <li><a href="#этические-вопросы-и-ограничения" id="toc-этические-вопросы-и-ограничения" class="nav-link" data-scroll-target="#этические-вопросы-и-ограничения">Этические вопросы и ограничения</a></li>
+  </ul></li>
+  <li><a href="#заключение" id="toc-заключение" class="nav-link" data-scroll-target="#заключение">Заключение</a>
+  <ul class="collapse">
+  <li><a href="#важность-reverse-engineering-для-инженеров-и-исследователей" id="toc-важность-reverse-engineering-для-инженеров-и-исследователей" class="nav-link" data-scroll-target="#важность-reverse-engineering-для-инженеров-и-исследователей">Важность Reverse Engineering для инженеров и исследователей</a></li>
+  <li><a href="#развитие-reverse-engineering-в-будущем" id="toc-развитие-reverse-engineering-в-будущем" class="nav-link" data-scroll-target="#развитие-reverse-engineering-в-будущем">Развитие Reverse Engineering в будущем</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">labv7</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="конспект-презентации-дмитрия-склярова-на-тему-reverse-engineering" class="level1">
+<h1>Конспект презентации Дмитрия Склярова на тему Reverse Engineering:</h1>
+<section id="введение" class="level2">
+<h2 class="anchored" data-anchor-id="введение">Введение</h2>
+<section id="определение-reverse-engineering-обратная-разработка" class="level3">
+<h3 class="anchored" data-anchor-id="определение-reverse-engineering-обратная-разработка">Определение Reverse Engineering (обратная разработка)</h3>
+<p>Reverse Engineering (обратная разработка): Процесс анализа программного или аппаратного обеспечения для извлечения информации о его работе и функциональности. Он включает в себя преобразование компилированного кода в исходный код или другой более понятный представления программы.</p>
+</section>
+<section id="значение-reverse-engineering-в-современном-мире" class="level3">
+<h3 class="anchored" data-anchor-id="значение-reverse-engineering-в-современном-мире">Значение Reverse Engineering в современном мире</h3>
+<ul>
+<li><p>Исследование и понимание функциональности и работы программного обеспечения: Reverse Engineering позволяет разработчикам и исследователям разобраться в том, как работает программное обеспечение, которое не является открытым исходным кодом. Это позволяет им изучать и анализировать сложные алгоритмы, протоколы и системы, повышая их понимание и улучшая качество разработки.</p></li>
+<li><p>Обнаружение и устранение уязвимостей безопасности: С помощью Reverse Engineering исследователи могут анализировать программное обеспечение и обнаруживать уязвимости безопасности, которые могут быть использованы злоумышленниками. Это позволяет разработчикам улучшить безопасность систем и предпринять меры для устранения обнаруженных уязвимостей.</p></li>
+<li><p>Создание совместимых альтернативных решений: Reverse Engineering позволяет разработчикам создавать совместимые альтернативные решения для закрытых форматов файлов, протоколов или аппаратных систем. Это особенно полезно, когда оригинальные исходные коды или документация недоступны или утрачены.</p></li>
+<li><p>Восстановление утраченной документации или дизайна: В случае утраты документации или дизайна, Reverse Engineering может быть использован для восстановления этой информации. Анализ программного или аппаратного обеспечения позволяет понять его структуру, функции и особенности, что может быть ценной информацией для последующей разработки, поддержки или модернизации.</p></li>
+<li><p>Инновации и развитие технологий: Reverse Engineering может стимулировать инновации и развитие технологий, позволяя исследователям изучать и адаптировать существующие решения, создавать новые продукты и улучшать существующие технологии.</p></li>
+</ul>
+</section>
+</section>
+<section id="цели-и-применение-reverse-engineering" class="level2">
+<h2 class="anchored" data-anchor-id="цели-и-применение-reverse-engineering">Цели и применение Reverse Engineering</h2>
+<ul>
+<li><p>Исследование и понимание функциональности и работы программного обеспечения</p></li>
+<li><p>Обнаружение и устранение уязвимостей безопасности</p></li>
+<li><p>Создание совместимых альтернативных решений</p></li>
+<li><p>Восстановление утраченной документации или дизайна</p></li>
+</ul>
+</section>
+<section id="основные-методы-reverse-engineering" class="level2">
+<h2 class="anchored" data-anchor-id="основные-методы-reverse-engineering">Основные методы Reverse Engineering</h2>
+<section id="дизассемблирование" class="level3">
+<h3 class="anchored" data-anchor-id="дизассемблирование">Дизассемблирование</h3>
+<p>Дизассемблирование: Это процесс преобразования машинного кода (код, исполняемый компьютером) в исходный код на языке ассемблера, который более понятен для человека. Дизассемблеры, такие как IDA Pro и Ghidra, используются для выполнения этой задачи.</p>
+</section>
+<section id="декомпиляция" class="level3">
+<h3 class="anchored" data-anchor-id="декомпиляция">Декомпиляция:</h3>
+<p>Декомпиляция - это процесс преобразования исполняемого файла обратно в высокоуровневый язык программирования, такой как C или C++. Это позволяет исследователям анализировать и модифицировать программы на более высоком уровне, чем ассемблер. Некоторые инструменты декомпиляции, такие как RetDec и Hex-Rays IDA, могут использоваться для выполнения декомпиляции.</p>
+</section>
+<section id="отладка" class="level3">
+<h3 class="anchored" data-anchor-id="отладка">Отладка</h3>
+<p>Отладка: Отладка - это процесс анализа программы в процессе ее выполнения для изучения ее поведения и выявления ошибок. Отладчики, такие как OllyDbg и GDB, позволяют исследователям устанавливать точки останова, отслеживать значения переменных и шагать по коду программы, чтобы лучше понять ее работу.</p>
+</section>
+</section>
+<section id="инструменты-reverse-engineering" class="level2">
+<h2 class="anchored" data-anchor-id="инструменты-reverse-engineering">Инструменты Reverse Engineering</h2>
+<ul>
+<li><p>Дизассемблеры (IDA Pro, Ghidra)</p></li>
+<li><p>Декомпиляторы (RetDec, Hex-Rays IDA)</p></li>
+<li><p>Отладчики (OllyDbg, GDB)</p></li>
+<li><p>Инструменты статического анализа</p></li>
+</ul>
+<p>Это программы, которые позволяют анализировать код без его выполнения. Они позволяют исследователям изучать структуру программы, искать уязвимости безопасности и проводить другие анализы. Примеры инструментов статического анализа включают Binary Ninja и Radare2.</p>
+</section>
+<section id="практические-примеры-reverse-engineering" class="level2">
+<h2 class="anchored" data-anchor-id="практические-примеры-reverse-engineering">Практические примеры Reverse Engineering</h2>
+<ul>
+<li>Анализ вредоносных программ</li>
+</ul>
+<p>Вредоносные программы - это программы, разработанные для причинения вреда или нанесения ущерба компьютерным системам или пользователям. Анализ вредоносных программ с помощью Reverse Engineering позволяет исследователям понять их функциональность, обнаружить уязвимости и разработать методы защиты.</p>
+<ul>
+<li><p>Разбор протоколов и форматов данных</p></li>
+<li><p>Изучение аппаратных систем и встроенного ПО</p></li>
+<li><p>Взлом защиты программного обеспечения</p></li>
+</ul>
+</section>
+<section id="правовые-аспекты-reverse-engineering" class="level2">
+<h2 class="anchored" data-anchor-id="правовые-аспекты-reverse-engineering">Правовые аспекты Reverse Engineering</h2>
+<section id="законодательство-о-reverse-engineering-в-разных-странах" class="level3">
+<h3 class="anchored" data-anchor-id="законодательство-о-reverse-engineering-в-разных-странах">Законодательство о Reverse Engineering в разных странах</h3>
+<p>Законодательство о Reverse Engineering: Каждая страна имеет свои законы, регулирующие Reverse Engineering. Эти законы определяют легальность и ограничения на анализ и модификацию программного или аппаратного обеспечения без разрешения владельца. Этические вопросы также играют важную роль в использовании Reverse Engineering.</p>
+</section>
+<section id="этические-вопросы-и-ограничения" class="level3">
+<h3 class="anchored" data-anchor-id="этические-вопросы-и-ограничения">Этические вопросы и ограничения</h3>
+<p>Этические аспекты Reverse Engineering включают в себя вопросы использования Reverse Engineering в соответствии с этическими принципами. Исследователи и инженеры, занимающиеся Reverse Engineering, должны соблюдать принципы честности, конфиденциальности и уважения к правам собственности других лиц. Они должны использовать полученную информацию только в рамках законных целей, например, для обеспечения безопасности или разработки совместимых решений. Ограничения могут быть наложены законодательством и договорными обязательствами. Некоторые программы и системы могут быть защищены авторским правом или другими формами интеллектуальной собственности, и их анализ или модификация может быть запрещена без разрешения владельца. Исследователи должны соблюдать эти законы и ограничения при проведении Reverse Engineering.</p>
+</section>
+</section>
+<section id="заключение" class="level2">
+<h2 class="anchored" data-anchor-id="заключение">Заключение</h2>
+<section id="важность-reverse-engineering-для-инженеров-и-исследователей" class="level3">
+<h3 class="anchored" data-anchor-id="важность-reverse-engineering-для-инженеров-и-исследователей">Важность Reverse Engineering для инженеров и исследователей</h3>
+<p>Reverse Engineering играет важную роль в работе инженеров и исследователей, предоставляя им возможность понять и разобраться в сложных программных и аппаратных системах, а также обнаружить и устранить уязвимости безопасности. Он способствует развитию технологий, инновациям и созданию совместимых альтернативных решений, что может способствовать прогрессу в различных отраслях, таких как информационная безопасность, программная разработка и аппаратная инженерия.</p>
+</section>
+<section id="развитие-reverse-engineering-в-будущем" class="level3">
+<h3 class="anchored" data-anchor-id="развитие-reverse-engineering-в-будущем">Развитие Reverse Engineering в будущем</h3>
+<p>Reverse Engineering остается активной и развивающейся областью, поскольку появляются новые технологии, форматы данных и системы, требующие анализа и понимания. С развитием искусственного интеллекта, машинного обучения и автоматизации, ожидается, что инструменты и методы Reverse Engineering станут более мощными и эффективными, позволяя более быстро и точно анализировать сложные программы и системы. Однако, с развитием технологий, возникают и новые этические и правовые вопросы, связанные с Reverse Engineering, которые требуют внимания и обсуждения в научном и общественном сообществе.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
